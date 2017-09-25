@@ -10,7 +10,7 @@ module SlactionMailer
     end
 
     def body
-      @mail.text_part.body.decoded
+      @mail.text_part ? @mail.text_part.body.decoded : @mail.body.decoded
     end
 
     def from
